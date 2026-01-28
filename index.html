@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Winamp</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main-window.css">
+  <link rel="stylesheet" href="css/playlist-window.css">
+</head>
+<body>
+  <!-- Login screen -->
+  <div id="login-screen">
+    <h1>Spotify Winamp</h1>
+    <p style="color: #888; margin-bottom: 10px;">Classic Winamp interface for Spotify</p>
+    <button id="login-btn">Connect to Spotify</button>
+  </div>
+
+  <!-- Player -->
+  <div id="player" style="display: none;">
+    <div id="main-window">
+      <!-- Title bar -->
+      <div id="title-bar">
+        <div id="option-btn" class="title-btn"></div>
+        <div id="minimize-btn" class="title-btn"></div>
+        <div id="shade-btn" class="title-btn"></div>
+        <div id="close-btn" class="title-btn"></div>
+      </div>
+
+      <!-- Play/Pause indicator -->
+      <div id="play-pause-ind" class="play-pause-ind"></div>
+
+      <!-- Time display -->
+      <div id="time-display"></div>
+
+      <!-- Visualization -->
+      <canvas id="visualizer" width="76" height="16"></canvas>
+
+      <!-- Marquee (scrolling text) -->
+      <canvas id="marquee" width="154" height="6"></canvas>
+
+      <!-- Bitrate/Sample rate (decorative) -->
+      <div id="kbps">320</div>
+      <div id="khz">44</div>
+
+      <!-- Mono/Stereo indicators -->
+      <div id="mono-ind"></div>
+      <div id="stereo-ind"></div>
+
+      <!-- Volume slider -->
+      <div id="volume-bar">
+        <div id="volume-thumb"></div>
+      </div>
+
+      <!-- Balance slider (decorative) -->
+      <div id="balance-bar">
+        <div id="balance-thumb"></div>
+      </div>
+
+      <!-- EQ and PL toggle buttons -->
+      <div id="eq-btn"></div>
+      <div id="pl-btn"></div>
+
+      <!-- Seek/Position bar -->
+      <div id="seek-bar">
+        <div id="seek-thumb"></div>
+      </div>
+
+      <!-- Transport buttons -->
+      <div id="prev-btn" class="transport-btn"></div>
+      <div id="play-btn" class="transport-btn"></div>
+      <div id="pause-btn" class="transport-btn"></div>
+      <div id="stop-btn" class="transport-btn"></div>
+      <div id="next-btn" class="transport-btn"></div>
+      <div id="eject-btn" class="transport-btn"></div>
+
+      <!-- Shuffle and Repeat -->
+      <div id="shuffle-btn"></div>
+      <div id="repeat-btn"></div>
+    </div>
+
+    <!-- Playlist window -->
+    <div id="playlist-window">
+      <div class="pl-header">Playlist</div>
+      <div class="pl-tracks"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

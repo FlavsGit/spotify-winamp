@@ -1,0 +1,401 @@
+/* Main Winamp window styles */
+:root {
+  --scale: 2;
+  --skin-path: '../assets/skins/default';
+}
+
+#login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+#login-screen h1 {
+  color: #00ff00;
+  font-size: 24px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+#login-btn {
+  background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+#login-btn:hover {
+  background: linear-gradient(180deg, #5a6578 0%, #3d4758 100%);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+#player {
+  --scale: 2;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  transform: scale(var(--scale));
+  transform-origin: top left;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#main-window {
+  position: relative;
+  width: 275px;
+  height: 116px;
+  background-image: url('../assets/skins/default/MAIN.png');
+  background-size: 275px 116px;
+  user-select: none;
+}
+
+/* Title bar */
+#title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 275px;
+  height: 14px;
+  background-image: url('../assets/skins/default/TITLEBAR.png');
+  background-position: -27px 0;
+  cursor: move;
+}
+
+#title-bar.inactive {
+  background-position: -27px -15px;
+}
+
+/* Title bar buttons */
+.title-btn {
+  position: absolute;
+  cursor: pointer;
+}
+
+#option-btn {
+  top: 3px;
+  left: 6px;
+  width: 9px;
+  height: 9px;
+  background-image: url('../assets/skins/default/TITLEBAR.png');
+  background-position: 0 0;
+}
+#option-btn:active { background-position: 0 -9px; }
+
+#minimize-btn {
+  top: 3px;
+  left: 244px;
+  width: 9px;
+  height: 9px;
+  background-image: url('../assets/skins/default/TITLEBAR.png');
+  background-position: -9px 0;
+}
+#minimize-btn:active { background-position: -9px -9px; }
+
+#shade-btn {
+  top: 3px;
+  left: 254px;
+  width: 9px;
+  height: 9px;
+  background-image: url('../assets/skins/default/TITLEBAR.png');
+  background-position: 0 -18px;
+}
+#shade-btn:active { background-position: -9px -18px; }
+
+#close-btn {
+  top: 3px;
+  left: 264px;
+  width: 9px;
+  height: 9px;
+  background-image: url('../assets/skins/default/TITLEBAR.png');
+  background-position: -18px 0;
+}
+#close-btn:active { background-position: -18px -9px; }
+
+/* Play/Pause indicator */
+.play-pause-ind {
+  position: absolute;
+  top: 26px;
+  left: 24px;
+  width: 11px;
+  height: 9px;
+  background-image: url('../assets/skins/default/PLAYPAUS.png');
+  background-position: -18px 0; /* stopped */
+}
+.play-pause-ind.playing { background-position: 0 0; }
+.play-pause-ind.paused { background-position: -9px 0; }
+
+/* Time display */
+#time-display {
+  position: absolute;
+  top: 26px;
+  left: 48px;
+  width: 63px;
+  height: 13px;
+  display: flex;
+  gap: 0;
+  cursor: pointer;
+}
+
+#time-display .time-digit {
+  image-rendering: pixelated;
+}
+
+/* Visualization */
+#visualizer {
+  position: absolute;
+  top: 43px;
+  left: 24px;
+  width: 76px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Marquee */
+#marquee {
+  position: absolute;
+  top: 24px;
+  left: 111px;
+  width: 154px;
+  height: 6px;
+}
+
+/* Bitrate and sample rate (decorative) */
+#kbps {
+  position: absolute;
+  top: 43px;
+  left: 111px;
+  width: 15px;
+  height: 6px;
+  font-size: 6px;
+  color: #00ff00;
+  line-height: 6px;
+}
+
+#khz {
+  position: absolute;
+  top: 43px;
+  left: 156px;
+  width: 10px;
+  height: 6px;
+  font-size: 6px;
+  color: #00ff00;
+  line-height: 6px;
+}
+
+/* Mono/Stereo indicators */
+#mono-ind, #stereo-ind {
+  position: absolute;
+  top: 41px;
+  background-image: url('../assets/skins/default/MONOSTER.png');
+  opacity: 0.4;
+}
+
+#stereo-ind {
+  left: 239px;
+  width: 29px;
+  height: 12px;
+  background-position: 0 -12px;
+}
+#stereo-ind.on {
+  background-position: 0 0;
+  opacity: 1;
+}
+
+#mono-ind {
+  left: 212px;
+  width: 27px;
+  height: 12px;
+  background-position: -29px -12px;
+}
+#mono-ind.on {
+  background-position: -29px 0;
+  opacity: 1;
+}
+
+/* Volume slider */
+#volume-bar {
+  position: absolute;
+  top: 57px;
+  left: 107px;
+  width: 68px;
+  height: 13px;
+  background-image: url('../assets/skins/default/VOLUME.png');
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+#volume-thumb {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 14px;
+  height: 11px;
+  background-image: url('../assets/skins/default/VOLUME.png');
+  background-position: -15px -422px;
+  cursor: pointer;
+}
+#volume-thumb.pressed {
+  background-position: 0 -422px;
+}
+
+/* Balance slider */
+#balance-bar {
+  position: absolute;
+  top: 57px;
+  left: 177px;
+  width: 38px;
+  height: 13px;
+  background-image: url('../assets/skins/default/BALANCE.png');
+  background-position: 0 -182px; /* centered position */
+}
+
+#balance-thumb {
+  position: absolute;
+  top: 1px;
+  left: 12px; /* centered */
+  width: 14px;
+  height: 11px;
+  background-image: url('../assets/skins/default/BALANCE.png');
+  background-position: -15px -422px;
+}
+
+/* EQ and PL buttons */
+#eq-btn, #pl-btn {
+  position: absolute;
+  top: 58px;
+  width: 23px;
+  height: 12px;
+  background-image: url('../assets/skins/default/SHUFREP.png');
+  cursor: pointer;
+}
+
+#eq-btn {
+  left: 219px;
+  background-position: 0 -61px;
+}
+#eq-btn.active { background-position: 0 -73px; }
+
+#pl-btn {
+  left: 242px;
+  background-position: -23px -61px;
+}
+#pl-btn.active { background-position: -23px -73px; }
+
+/* Seek/Position bar */
+#seek-bar {
+  position: absolute;
+  top: 72px;
+  left: 16px;
+  width: 248px;
+  height: 10px;
+  background-image: url('../assets/skins/default/POSBAR.png');
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+#seek-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 10px;
+  background-image: url('../assets/skins/default/POSBAR.png');
+  background-position: -248px 0;
+  cursor: pointer;
+}
+#seek-thumb.pressed {
+  background-position: -278px 0;
+}
+
+/* Transport buttons */
+.transport-btn {
+  position: absolute;
+  top: 88px;
+  cursor: pointer;
+  background-image: url('../assets/skins/default/CBUTTONS.png');
+}
+
+#prev-btn {
+  left: 16px;
+  width: 23px;
+  height: 18px;
+  background-position: 0 0;
+}
+#prev-btn.pressed { background-position: 0 -18px; }
+
+#play-btn {
+  left: 39px;
+  width: 23px;
+  height: 18px;
+  background-position: -23px 0;
+}
+#play-btn.pressed { background-position: -23px -18px; }
+
+#pause-btn {
+  left: 62px;
+  width: 23px;
+  height: 18px;
+  background-position: -46px 0;
+}
+#pause-btn.pressed { background-position: -46px -18px; }
+
+#stop-btn {
+  left: 85px;
+  width: 23px;
+  height: 18px;
+  background-position: -69px 0;
+}
+#stop-btn.pressed { background-position: -69px -18px; }
+
+#next-btn {
+  left: 108px;
+  width: 22px;
+  height: 18px;
+  background-position: -92px 0;
+}
+#next-btn.pressed { background-position: -92px -18px; }
+
+#eject-btn {
+  top: 89px;
+  left: 136px;
+  width: 22px;
+  height: 16px;
+  background-position: -114px 0;
+}
+#eject-btn.pressed { background-position: -114px -16px; }
+
+/* Shuffle and Repeat buttons */
+#shuffle-btn, #repeat-btn {
+  position: absolute;
+  top: 89px;
+  cursor: pointer;
+  background-image: url('../assets/skins/default/SHUFREP.png');
+}
+
+#shuffle-btn {
+  left: 164px;
+  width: 47px;
+  height: 15px;
+  background-position: -28px 0;
+}
+#shuffle-btn:active { background-position: -28px -15px; }
+#shuffle-btn.active { background-position: -28px -30px; }
+#shuffle-btn.active:active { background-position: -28px -45px; }
+
+#repeat-btn {
+  left: 210px;
+  width: 28px;
+  height: 15px;
+  background-position: 0 0;
+}
+#repeat-btn:active { background-position: 0 -15px; }
+#repeat-btn.repeat-context,
+#repeat-btn.repeat-track { background-position: 0 -30px; }
+#repeat-btn.repeat-context:active,
+#repeat-btn.repeat-track:active { background-position: 0 -45px; }

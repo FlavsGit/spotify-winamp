@@ -1,0 +1,57 @@
+/* Playlist window */
+#playlist-window {
+  position: absolute;
+  top: 116px;
+  left: 0;
+  width: 275px;
+  min-height: 116px;
+  background: #000;
+  border: 1px solid #00ff00;
+  display: none;
+}
+
+.pl-header {
+  background: linear-gradient(180deg, #4a5568 0%, #2d3748 100%);
+  padding: 2px 4px;
+  font-size: 8px;
+  color: #00ff00;
+  border-bottom: 1px solid #00ff00;
+}
+
+.pl-tracks {
+  max-height: 150px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+}
+
+.pl-track {
+  padding: 1px 4px;
+  color: #00ff00;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pl-track.pl-current {
+  color: #fff;
+  background: #0000c6;
+}
+
+.pl-track:hover {
+  background: #333;
+}
+
+/* Scrollbar styling */
+.pl-tracks::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pl-tracks::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+.pl-tracks::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 2px;
+}
